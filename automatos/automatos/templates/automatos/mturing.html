@@ -1,0 +1,36 @@
+{% extends 'automatos/layout.html' %}
+
+{% block main %}
+    <h3 class="">Maquinas Turing (MT)</h3>
+    <nav>
+        <a href="{% url 'automatos:criarmt' %}" class="btn btn-success" class="btn btn-info">Criar uma MT</a>
+        <a href="{% url 'automatos:jsonmt' %}" class="btn btn-success" class="btn btn-info">Carregar um MT</a>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 border-bottom border-top">
+                <h3>Diagrama de Estados</h3>
+            </div>
+            <div class="col-sm-6 border-bottom border-top">
+                <h3>Descrição</h3>
+            </div>
+
+        </div>
+    </div>
+    {% for mt in mturings %}
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                {% load static %} <img src="{% static "automatos/images/imagesMaquinas/" %}{{ mt.Descricao }}.svg" alt="home" width="300" height="300" />
+            </div>
+            <div class="col">
+                <p>{{ mt.Descricao }}</p>
+                <a href="{% url 'automatos:visualmt' mt.id %}" class="btn btn-info btn_sm" >Detalhes</a>
+                <a href="{% url 'automatos:testarmt' mt.id %}" class="btn btn-success btn_sm" >Validar Sequencia</a>
+                <a href="{% url 'automatos:editarmt' mt.id %}" class="btn btn-warning btn_sm">Editar MT</a>
+                <a href="{% url 'automatos:apagarmt' mt.id %}" class="btn btn-danger btn_sm">Apagar MT</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+{% endblock %}

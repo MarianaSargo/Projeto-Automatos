@@ -1,0 +1,21 @@
+digraph "So aceita 0s e 1s na mesma quantidade e ordem" {
+	graph [rankdir=LR]
+	node [shape=circle]
+	edge [arrowhead=vee arrowsize=1]
+	Start [label="" shape=none]
+	B
+	D
+	A
+	C
+	E [shape=doublecircle]
+	Start -> A
+	A -> B [label="0ΔR"]
+	B -> B [label="00R"]
+	B -> B [label="11R"]
+	B -> C [label="ΔΔL"]
+	C -> D [label="1ΔL"]
+	D -> D [label="00L"]
+	D -> D [label="11L"]
+	D -> A [label="ΔΔR"]
+	A -> E [label="ΔΔS"]
+}

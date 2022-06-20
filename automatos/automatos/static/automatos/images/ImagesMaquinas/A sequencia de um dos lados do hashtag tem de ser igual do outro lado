@@ -1,0 +1,34 @@
+digraph "A sequencia de um dos lados do hashtag tem de ser igual do outro lado" {
+	graph [rankdir=LR]
+	node [shape=circle]
+	edge [arrowhead=vee arrowsize=1]
+	Start [label="" shape=none]
+	B
+	E
+	F
+	A
+	D
+	C
+	G [shape=doublecircle]
+	Start -> A
+	A -> A [label=XXR]
+	A -> A [label="##R"]
+	A -> B [label="1XR"]
+	B -> B [label="00R"]
+	B -> B [label="11R"]
+	B -> C [label="##R"]
+	C -> C [label=XXR]
+	C -> D [label="1XL"]
+	D -> D [label="00L"]
+	D -> D [label="11L"]
+	D -> D [label=XXL]
+	D -> D [label="##L"]
+	A -> E [label="0XR"]
+	E -> E [label="00R"]
+	E -> E [label="11R"]
+	E -> F [label="##R"]
+	F -> F [label=XXR]
+	F -> D [label="0XL"]
+	D -> A [label="ΔΔR"]
+	A -> G [label="ΔΔS"]
+}

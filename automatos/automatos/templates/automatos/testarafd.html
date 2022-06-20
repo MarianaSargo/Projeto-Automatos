@@ -1,0 +1,16 @@
+{% extends 'automatos/layout.html' %}
+
+{% block main %}
+    <h1>Validar Sequencia</h1>
+
+    <form action="" method='post'>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Testar">
+    </form>
+
+        {% if resultado != None %}
+        <p>{{ resultado }}</p>
+        {% endif %}
+
+{% endblock %}

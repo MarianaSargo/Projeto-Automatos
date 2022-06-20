@@ -1,0 +1,36 @@
+{% extends 'automatos/layout.html' %}
+
+{% block main %}
+    <h3 class="">Autómatos Finitos Deterministicos (AFD)</h3>
+    <nav>
+        <a href="{% url 'automatos:criarafd' %}" class="btn btn-success" class="btn btn-info">Criar um AFD</a>
+        <a href="{% url 'automatos:jsonafd' %}" class="btn btn-success" class="btn btn-info">Carregar um AFD</a>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 border-bottom border-top">
+                <h3>Diagrama de Estados</h3>
+            </div>
+            <div class="col-sm-6 border-bottom border-top">
+                <h3>Descrição</h3>
+            </div>
+
+        </div>
+    </div>
+    {% for automato in automatos %}
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 border-bottom">
+                {% load static %} <img src="{% static "automatos/images/imagesAutomatos/" %}{{ automato.Descricao }}.svg" alt="home" width="300" height="300" />
+            </div>
+            <div class="col-sm-6 border-bottom mt-0" >
+                    <p>{{ automato.Descricao }}</p>
+                    <a href="{% url 'automatos:visualafd' automato.id %}" class="btn btn-info btn_sm" >Detalhes</a>
+                    <a href="{% url 'automatos:testarafd' automato.id %}" class="btn btn-success btn_sm" >Validar Sequencia</a>
+                    <a href="{% url 'automatos:editarafd' automato.id %}" class="btn btn-warning btn_sm">Editar AFD</a>
+                    <a href="{% url 'automatos:apagarafd' automato.id %}" class="btn btn-danger btn_sm">Apagar AFD</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+{% endblock %}

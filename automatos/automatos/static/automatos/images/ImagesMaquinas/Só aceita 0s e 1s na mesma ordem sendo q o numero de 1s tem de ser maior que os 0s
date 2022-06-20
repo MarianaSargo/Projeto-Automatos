@@ -1,0 +1,24 @@
+digraph "Só aceita 0s e 1s na mesma ordem sendo q o numero de 1s tem de ser maior que os 0s" {
+	graph [rankdir=LR]
+	node [shape=circle]
+	edge [arrowhead=vee arrowsize=1]
+	Start [label="" shape=none]
+	B
+	A
+	D
+	C
+	E [shape=doublecircle]
+	Start -> A
+	A -> A [label=XXR]
+	A -> B [label="0XR"]
+	B -> B [label="00R"]
+	B -> B [label=XXR]
+	B -> C [label="1XL"]
+	C -> C [label="00L"]
+	C -> C [label="11L"]
+	C -> C [label=XXL]
+	C -> A [label="ΔΔR"]
+	A -> D [label="11R"]
+	D -> D [label="11R"]
+	D -> E [label="ΔΔS"]
+}

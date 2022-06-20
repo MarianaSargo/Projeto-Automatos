@@ -1,0 +1,21 @@
+digraph "A sequencia tem de começar e acabar com o mesmo simbolo" {
+	graph [rankdir=LR]
+	node [shape=circle]
+	edge [arrowhead=vee arrowsize=1]
+	Start [label="" shape=none]
+	B
+	A
+	C
+	D [shape=doublecircle]
+	E [shape=doublecircle]
+	Start -> A
+	A -> B [label=0]
+	B -> B [label=1]
+	B -> D [label=0]
+	D -> B [label=1]
+	D -> D [label=0]
+	A -> C [label=1]
+	C -> E [label=1]
+	E -> E [label=1]
+	E -> C [label=0]
+}

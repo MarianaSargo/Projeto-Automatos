@@ -1,0 +1,10 @@
+{% extends 'automatos/layout.html' %}
+
+{% block main %}
+    <p>Descrição: {{ detalhes.Descricao }}</p>
+    <p>Alfabeto: {{ detalhes.Alfabeto }}</p>
+    <p>Estados: {{ detalhes.Estados }}</p>
+    <p>Estado Inicial: {{ detalhes.EstadoInicial }}</p>
+    <p>Estados de Aceitação: {{ detalhes.EstadoFinal }}</p>
+    <p>Tabela de Transições: {{ detalhes.Transicoes }}</p>
+{% endblock %}

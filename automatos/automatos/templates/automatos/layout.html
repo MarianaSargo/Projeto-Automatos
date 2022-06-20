@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'automatos/css/base.css' %}">
+</head>
+<body>
+    <header class="jumbotron text-center">
+        <h1>Teoria da Computação</h1>
+        <nav>
+            <a href="{% url 'automatos:introducao' %}" class="btn btn-primary" class="btn btn-info">Introdução</a>
+            <a href="{% url 'automatos:automatos' %}" class="btn btn-primary" class="btn btn-info">Autómatos</a>
+            <a href="{% url 'automatos:mturing' %}" class="btn btn-primary" class="btn btn-info">Maquinas</a>
+        </nav>
+    </header>
+    <footer>
+    </footer>
+    <article class="container">
+        <main class="container text-center">
+            {% block main %}
+	        {% endblock main %}
+        </main>
+        <aside class="col-sm-6">
+            <img src="" alt="">
+        </aside>
+    </article>
+
+</body>
+</html>

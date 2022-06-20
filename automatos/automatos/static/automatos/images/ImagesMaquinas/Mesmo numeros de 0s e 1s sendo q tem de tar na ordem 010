@@ -1,0 +1,35 @@
+digraph "Mesmo numeros de 0s e 1s sendo q tem de tar na ordem 010" {
+	graph [rankdir=LR]
+	node [shape=circle]
+	edge [arrowhead=vee arrowsize=1]
+	Start [label="" shape=none]
+	B
+	G
+	E
+	F
+	A
+	D
+	C
+	H [shape=doublecircle]
+	Start -> A
+	A -> A [label=XXR]
+	A -> B [label="0XR"]
+	B -> B [label="00R"]
+	B -> B [label=XXR]
+	B -> C [label="1XR"]
+	C -> C [label="11R"]
+	C -> D [label="00R"]
+	D -> D [label="00R"]
+	D -> E [label="ΔΔL"]
+	E -> E [label=XXL]
+	E -> E [label="00L"]
+	E -> E [label="11L"]
+	E -> A [label="ΔΔR"]
+	A -> F [label="1XR"]
+	F -> F [label="11R"]
+	F -> F [label=XXR]
+	F -> G [label="0XR"]
+	G -> G [label="00R"]
+	G -> E [label="ΔΔL"]
+	A -> H [label="ΔΔS"]
+}
